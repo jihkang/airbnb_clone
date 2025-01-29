@@ -22,6 +22,7 @@ class TweetCustomFilter(admin.SimpleListFilter):
 
 @admin.register(Tweet)
 class TweetAdmin(admin.ModelAdmin):
+    readonly_fields = ("likes_count", "created_at")
     list_display = ("content", "user", "likes_count")
     search_fields = ("content", "user__username",)
     list_filter = (TweetCustomFilter, "user", "created_at")
