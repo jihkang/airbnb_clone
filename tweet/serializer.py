@@ -8,4 +8,4 @@ class TweetSerializer(serializers.ModelSerializer):
     likes_count = serializers.IntegerField(read_only=True)
     class Meta:
         model = Tweet
-        fields = ("id", "user", "content"   , "likes_count")
+        fields = ("id", "user", "content", "likes_count")
